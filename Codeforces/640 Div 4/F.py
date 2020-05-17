@@ -3,8 +3,7 @@
 
 # https://codeforces.com/contest/1352/problems
 
-# I couldn't figure out that there were only 2 cases: n1 == 0 and n1!=0. I made it very convoluted by 
-# using many many nested cases.
+# I couldn't figure out that there were only 2 cases: n1 == 0 and n1!=0. I made it very convoluted by using many many nested cases.
 
 t = int(input())
 for _ in range(t):

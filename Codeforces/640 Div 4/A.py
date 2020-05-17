@@ -14,5 +14,6 @@ for _ in range(t):
         nums.append(int(num)*(10**(n - i - 1)))
     
     print(count)
-    print(' '.join([str(i) for i in nums]))
+    # print(' '.join([str(i) for i in nums]))
+    print(*nums)
 
