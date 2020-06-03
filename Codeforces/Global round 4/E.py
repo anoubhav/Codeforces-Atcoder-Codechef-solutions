@@ -1,3 +1,4 @@
+# https://codeforces.com/blog/entry/68534
 from sys import stdin, stdout
 s = stdin.readline().strip()
 # s = input().strip()
