@@ -30,7 +30,7 @@ while q > 0:
     ts = int(input())
     while ts % 2 == 0:
         ts //= 2
-    print ts // 2
+    print(ts // 2)
     q -= 1 
 
         
