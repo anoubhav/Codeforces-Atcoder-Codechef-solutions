@@ -19,12 +19,12 @@ print(*nums)
 
 
 # someone else's
-# n = int(input())
-# a = list(map(int, input().split()))
+n = int(input())
+a = list(map(int, input().split()))
  
-# s = 0
-# for i in a:
-#     s ^= i
+s = 0
+for i in a:
+    s ^= i
  
-# print(' '.join([str(s ^ i) for i in a]))
+print(' '.join([str(s ^ i) for i in a]))
 
