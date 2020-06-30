@@ -1,0 +1,44 @@
+For E1, there is no constraint on picking exactly M books. But you need to pick atleast k books which alice likes and k books which bob likes.
+
+To handle the minimum time condition we sort stuff. Let alice be a, bob be b. let like be 1 and dislike be 0.
+
+The way we input is the key trick. Split your books into 4 lists a0_b1, a1_b0, a1_b1, a0_b0.
+
+sort each of the four lists.
+now you use 4 pointers (let them be: a0_b1: zo, a1_b0: oz, a1_b1: oo). (a0_b0 list is useless as you want to pick k books which  alice likes, once you do that, no point of picking a book whcih both dislike as this can ONLY add the minimum time)
+
+### INPUT ###
+alike, blike = 0, 0
+zero_one, one_zero, one_one, zero_zero = [], [], [], []
+for i in range(n):
+    t, a, b = map(int, input().split())
+    alike += a
+    blike += b
+
+    if a == 0 and b == 1:
+        zero_one.append((t, i))
+    elif a == 1 and b == 0:
+        one_zero.append((t, i))
+    elif a== 1 and b== 1:
+        one_one.append((t, i))
+    else:
+        zero_zero.append((t, i))
+
+In E1, if number of books which alice likes in total is less than k or what bob likes is less than k, print(-1)
+
+let alike and blike (ignore above) be the number of books picked which are liked by alice and liked by bob respectively.
+
+while alike < k and blike < k:
+
+3 cases:
+    1)both alike and blike < k
+        here you check if a0_b1 + a1_b0 < a1_b1 (remember arrays are sorted).
+        If true: pick the element from a0_b1 and a1_b0 and incrememnt their pointers
+        If false: pick the element from a1_b1
+
+    2)alike < k and blike = k  and 3) blike <k and alike = k
+        # for case 2 (3 is same just swap)
+        here you check if a1_b0 < a1_b1.
+        If True: pick the element from a1_b0 and increment pointers
+        If False: pick from a1_b1
+
